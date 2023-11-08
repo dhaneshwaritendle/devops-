@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World this is aditya'
+            }
+        }
+    }
+    post{
+        always{
+            build job:'shellscript1', waitForStart: true
+        }
+    }
+}
